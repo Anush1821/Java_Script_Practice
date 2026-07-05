@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Student Registration</h2>
+       <form >
+
+        <input type="text" id="username" name="username" placeholder="Enter your username" required><br><br>
+        <input type="number" id="age" name="age" placeholder="Enter your age" required><br><br>
+        <input type="text" id="language" name ="language" placeholder="Enter your language" required><br><br>
+        <button type="submit">Register</button>
+
+       </form>
+       <ul id="studentList">
+      
+
+       </ul>
+
+    </div>
+    <script>
+       
+        const form = document.querySelector("form");
+
+const usernameInput = document.getElementById("username");
+const ageInput = document.getElementById("age");
+const courseInput = document.getElementById("language");
+const studentList = document.getElementById("studentList");
+       
+form.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+
+
+
+    const username = usernameInput.value.trim();
+
+    const age = ageInput.value.trim();
+
+    const course = courseInput.value.trim();
+
+
+
+
+    if (username === "" || age === "" || course === "") {
+
+        alert("Please fill all fields");
+
+        return;
+    }
+
+
+   
+    const button = document.createElement("button");
+    button.textContent = "Delete";
+    const li = document.createElement("li");
+
+    li.textContent = `${username} - ${age} - ${course}`;
+    li.appendChild(button);
+
+
+
+    studentList.appendChild(li);
+   button.addEventListener("click", function () {
+
+    li.remove();
+
+});
+
+    // Clear inputs
+
+    usernameInput.value = "";
+
+    ageInput.value = "";
+
+    courseInput.value = "";
+
+
+    // Focus first input
+
+    usernameInput.focus();
+
+    
+
+});
+
+
+    </script>
+    
+</body>
+</html>
