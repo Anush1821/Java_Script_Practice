@@ -36,6 +36,7 @@ form.addEventListener("submit", function (event) {
     // Clear input fields
     nameInput.value = "";
     ageInput.value = "";
+    
     languageInput.value = "";
 
     // Focus on first input
